@@ -1,1 +1,1 @@
-web: waitress-serve --port $PORT information_retrieval_system.wsgi.application
+web: waitress-serve --port $PORT information_retrieval_system:wsgi.application
