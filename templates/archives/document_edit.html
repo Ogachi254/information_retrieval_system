@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-10">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{% url 'index' %}">Documents</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Edit Document
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="col-md-2">
+      <a href="{% url 'index' %}" class="btn btn-primary">Back</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <form action="{% url 'document_edit' document.id %}" method="post">
+        {% csrf_token %}
+        {% include 'partials/_messages.html' %}
+        
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" name="title" value="{{ document.title }}">
+        </div>
+
+        <div class="form-group">
+          <label for="authors">Authors</label>
+          <textarea class="form-control" name="authors">{{ document.authors }}</textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="publication_date">Publication Date</label>
+          <input type="date" class="form-control" name="publication_date" value="{{ document.publication_date }}">
+        </div>
+
+        <div class="form-group">
+          <label for="abstract">Abstract</label>
+          <textarea class="form-control" name="abstract">{{ document.abstract }}</textarea>
+        </div>
+
+        <!-- Add similar form fields for other document attributes -->
+
+        <input type="submit" class="btn btn-primary" value="Save">
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

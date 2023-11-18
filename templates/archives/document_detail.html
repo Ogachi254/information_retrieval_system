@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Document Detail</h2>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ document.title }}</h5>
+            <p class="card-text"><strong>Authors:</strong> {{ document.authors }}</p>
+            <p class="card-text"><strong>Publication Date:</strong> {{ document.publication_date }}</p>
+            <p class="card-text"><strong>Abstract:</strong> {{ document.abstract }}</p>
+            <p class="card-text"><strong>Body Text:</strong> {{ document.body_text }}</p>
+            <p class="card-text"><strong>Keywords:</strong> {{ document.keywords }}</p>
+            <p class="card-text"><strong>References:</strong> {{ document.references }}</p>
+            <p class="card-text"><strong>Document ID:</strong> {{ document.document_id }}</p>
+            
+            <a href="{% url 'index' %}" class="btn btn-primary">Back to Documents</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
