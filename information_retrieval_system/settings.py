@@ -70,10 +70,10 @@ WSGI_APPLICATION = 'information_retrieval_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'recordsdb_dql5',
-        'USER': 'recordsdb_dql5_user',
-        'PASSWORD': 'qcyQchouLyJdxWS7R32uSyIeLrnFPzWy',
-        'HOST': 'dpg-clceemjmot1c73dfkdg0-a',
+        'NAME': 'recordsdb',
+        'USER': 'postgres',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
     }
 }
 
